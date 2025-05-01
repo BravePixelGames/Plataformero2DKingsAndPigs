@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lighting the Cannon (26x18)_0: -1657784535039530416
+      Lighting the Cannon (26x18)_1: 3963528392581243994
+      Lighting the Cannon (26x18)_2: 1574708025943414546
+      Lighting the Cannon (26x18)_3: -8613544103259060724
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

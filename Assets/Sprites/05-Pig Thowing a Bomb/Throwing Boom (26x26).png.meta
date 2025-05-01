@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Throwing Boom (26x26)_0: -3831027322900219386
+      Throwing Boom (26x26)_1: -6113700380981070983
+      Throwing Boom (26x26)_2: 2398247665401240669
+      Throwing Boom (26x26)_3: 7146856194918352852
+      Throwing Boom (26x26)_4: 5020798376093233244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

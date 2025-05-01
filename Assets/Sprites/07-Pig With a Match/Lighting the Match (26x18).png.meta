@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lighting the Match (26x18)_0: 3650614159125041722
+      Lighting the Match (26x18)_1: 5126536057754478943
+      Lighting the Match (26x18)_2: 8706800131634881894
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

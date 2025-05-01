@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Picking Bomb (26x26)_0: -4458410769544538354
+      Picking Bomb (26x26)_1: -7374474696859163375
+      Picking Bomb (26x26)_2: -4845243908633762097
+      Picking Bomb (26x26)_3: 763974937178674209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

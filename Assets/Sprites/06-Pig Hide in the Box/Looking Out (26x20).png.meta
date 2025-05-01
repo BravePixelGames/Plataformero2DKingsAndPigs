@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Looking Out (26x20)_0: -8923894921111557973
+      Looking Out (26x20)_1: -889865642661556081
+      Looking Out (26x20)_2: -6250522082488271914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

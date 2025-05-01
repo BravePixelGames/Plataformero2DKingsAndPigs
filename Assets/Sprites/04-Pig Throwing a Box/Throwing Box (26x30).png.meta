@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Throwing Box (26x30)_0: -6549827087310040559
+      Throwing Box (26x30)_1: -7045473965133341028
+      Throwing Box (26x30)_2: -7066327174908413044
+      Throwing Box (26x30)_3: -7597999739966301271
+      Throwing Box (26x30)_4: -2647195182174552112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
