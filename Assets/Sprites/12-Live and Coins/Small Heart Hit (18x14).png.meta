@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Small Heart Hit (18x14)_0: 8990266445832068473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

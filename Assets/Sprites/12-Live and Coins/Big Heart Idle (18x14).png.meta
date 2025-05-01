@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Big Heart Idle (18x14)_0: 7524770952856964032
+      Big Heart Idle (18x14)_1: -3075179375282782876
+      Big Heart Idle (18x14)_2: -8139120665926544298
+      Big Heart Idle (18x14)_3: -816245314989502535
+      Big Heart Idle (18x14)_4: 1944211724537626869
+      Big Heart Idle (18x14)_5: -7560668125873705574
+      Big Heart Idle (18x14)_6: 1987366461214730366
+      Big Heart Idle (18x14)_7: -3656239218742457601
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

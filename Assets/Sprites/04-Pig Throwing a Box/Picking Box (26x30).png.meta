@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Picking Box (26x30)_0: 5961414738421772328
+      Picking Box (26x30)_1: 3588479484779688414
+      Picking Box (26x30)_2: -157318332813557862
+      Picking Box (26x30)_3: -3607367409135715101
+      Picking Box (26x30)_4: -8687121615210541145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

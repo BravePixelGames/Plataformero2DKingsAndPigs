@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Boom In (24x8)_0: 4705710588684423725
+      Boom In (24x8)_1: -1582616905124313482
+      Boom In (24x8)_2: 5430786117769037634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

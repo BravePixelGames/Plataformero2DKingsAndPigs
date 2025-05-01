@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Jump Anticipation (26x20)_0: -8968860739922978091
+      Jump Anticipation (26x20)_1: -837126801168382908
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

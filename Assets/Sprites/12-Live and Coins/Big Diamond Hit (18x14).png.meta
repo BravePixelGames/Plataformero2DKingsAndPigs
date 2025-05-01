@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Big Diamond Hit (18x14)_0: -2931425290510409738
+      Big Diamond Hit (18x14)_1: 3835272105344415451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

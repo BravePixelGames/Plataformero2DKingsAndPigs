@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kings and Pigs_0: -474888807687516793
+      Kings and Pigs_1: -4771455511129220467
+      Kings and Pigs_2: -2414001522477524867
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
