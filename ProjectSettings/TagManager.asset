@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Suelo
-  - 
+  - Enemigo
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Suelo
     uniqueID: 155516241
+    locked: 0
+  - name: Enemigos
+    uniqueID: 1177712671
     locked: 0
   - name: Jugador
     uniqueID: 652346047
