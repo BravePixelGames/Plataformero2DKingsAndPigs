@@ -103,12 +103,12 @@ TextureImporter:
       name: Ground (34x28)_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 0
         y: 0
-        width: 20
-        height: 20
+        width: 34
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
