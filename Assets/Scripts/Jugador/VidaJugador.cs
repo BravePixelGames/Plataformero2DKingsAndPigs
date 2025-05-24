@@ -30,6 +30,11 @@ public class VidaJugador : MonoBehaviour
         }
     }
 
+    private void DestruirJugador()
+    {
+        Destroy(gameObject);
+    }
+
     public void CurarVida(int curacion)
     {
         int vidaTemporal = vidaActual + curacion;
@@ -41,10 +46,6 @@ public class VidaJugador : MonoBehaviour
         JugadorSeCuro?.Invoke(vidaActual);
     }
 
-    private void DestruirJugador()
-    {
-        Destroy(gameObject);
-    }
 
     public int GetVidaMaxima() => vidaMaxima;
     public int GetVidaActual() => vidaActual;
