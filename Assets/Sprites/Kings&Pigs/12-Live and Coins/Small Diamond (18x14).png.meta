@@ -82,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,7 +120,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,9 +149,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 11
-        height: 11
+        y: 0
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: Small Diamond (18x14)_1
       rect:
         serializedVersion: 2
-        x: 11
-        y: 4
-        width: 7
-        height: 7
+        x: 18
+        y: 0
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +192,10 @@ TextureImporter:
       name: Small Diamond (18x14)_2
       rect:
         serializedVersion: 2
-        x: 17
-        y: 2
-        width: 12
-        height: 11
+        x: 36
+        y: 0
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Small Diamond (18x14)_3
       rect:
         serializedVersion: 2
-        x: 29
-        y: 4
-        width: 7
-        height: 7
+        x: 54
+        y: 0
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Small Diamond (18x14)_4
       rect:
         serializedVersion: 2
-        x: 35
-        y: 2
-        width: 12
-        height: 11
+        x: 72
+        y: 0
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: Small Diamond (18x14)_5
       rect:
         serializedVersion: 2
-        x: 47
-        y: 4
-        width: 7
-        height: 7
+        x: 90
+        y: 0
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: Small Diamond (18x14)_6
       rect:
         serializedVersion: 2
-        x: 53
-        y: 2
-        width: 12
-        height: 11
+        x: 108
+        y: 0
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: Small Diamond (18x14)_7
       rect:
         serializedVersion: 2
-        x: 65
-        y: 4
-        width: 7
-        height: 7
+        x: 126
+        y: 0
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,187 +320,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Small Diamond (18x14)_8
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 2
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 762e801ec24e12300800000000000000
-      internalID: 225712337750385255
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Diamond (18x14)_9
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 4
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a6389a02514e0fc20800000000000000
-      internalID: 3238338911472812906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Diamond (18x14)_10
-      rect:
-        serializedVersion: 2
-        x: 89
-        y: 2
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 264fcb7c52fd72bb0800000000000000
-      internalID: -4960751111167478686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Diamond (18x14)_11
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 4
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de411930ab9d55eb0800000000000000
-      internalID: -4731636440535853843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Diamond (18x14)_12
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 2
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 87363fa50574ebe00800000000000000
-      internalID: 1062364972554871672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Diamond (18x14)_13
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 4
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55ff5ac73fc254220800000000000000
-      internalID: 2469429394962513749
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Diamond (18x14)_14
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 2
-        width: 12
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d20678d7966933200800000000000000
-      internalID: 158635791709855789
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Small Diamond (18x14)_15
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 4
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 20d85fd076fe9fca0800000000000000
-      internalID: -5982487404090127102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e6335c685ec8cae42a195738eae14e7a
     internalID: 0
     vertices: []
     indices: 
@@ -512,20 +336,12 @@ TextureImporter:
     nameFileIdTable:
       Small Diamond (18x14)_0: 8027453739642181220
       Small Diamond (18x14)_1: -4427168196244413436
-      Small Diamond (18x14)_10: -4960751111167478686
-      Small Diamond (18x14)_11: -4731636440535853843
-      Small Diamond (18x14)_12: 1062364972554871672
-      Small Diamond (18x14)_13: 2469429394962513749
-      Small Diamond (18x14)_14: 158635791709855789
-      Small Diamond (18x14)_15: -5982487404090127102
       Small Diamond (18x14)_2: -8552317413722225600
       Small Diamond (18x14)_3: 2765352709637960934
       Small Diamond (18x14)_4: 2470447754228299918
       Small Diamond (18x14)_5: -1038774656124713322
       Small Diamond (18x14)_6: -1715481614014497792
       Small Diamond (18x14)_7: -5677554441130930634
-      Small Diamond (18x14)_8: 225712337750385255
-      Small Diamond (18x14)_9: 3238338911472812906
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
