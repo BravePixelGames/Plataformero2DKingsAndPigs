@@ -13,7 +13,7 @@ TagManager:
   - UI
   - Suelo
   - Enemigo
-  - 
+  - Objeto
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Jugador
     uniqueID: 652346047
+    locked: 0
+  - name: Objeto
+    uniqueID: 1639032843
     locked: 0
   - name: Default
     uniqueID: 0

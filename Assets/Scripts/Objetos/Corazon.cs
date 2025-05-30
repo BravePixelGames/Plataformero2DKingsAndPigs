@@ -1,23 +1,22 @@
-using System;
 using UnityEngine;
 
-public class Diamante : MonoBehaviour, IInteractuable
+public class Corazon : MonoBehaviour, IInteractuable
 {
     [SerializeField] private Animator animator;
-    public static Action DiamanteRecolectado;
+    [SerializeField] private int cantidadCuracion;
     private bool sePuedeUsar = true;
 
     public void Interactuar()
     {
-        Recolectar();
-    }
-
-    private void Recolectar()
-    {
         if (!sePuedeUsar) { return; }
         sePuedeUsar = false;
-        DiamanteRecolectado?.Invoke();
         animator.SetTrigger("Recoger");
+
+        VidaJugador vidaJugador = FindFirstObjectByType<VidaJugador>();
+        if (vidaJugador != null)
+        {
+            vidaJugador.CurarVida(cantidadCuracion);
+        }
     }
 
     public void DestruirObjeto()
