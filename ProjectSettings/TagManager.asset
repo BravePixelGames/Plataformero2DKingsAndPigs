@@ -14,7 +14,7 @@ TagManager:
   - Suelo
   - Enemigo
   - Objeto
-  - 
+  - Caja
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Suelo
     uniqueID: 155516241
+    locked: 0
+  - name: ObjetosNoInteractuables
+    uniqueID: 1761025087
     locked: 0
   - name: Enemigos
     uniqueID: 1177712671
