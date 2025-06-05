@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class VidaEnemigo : MonoBehaviour
+public class VidaEnemigo : MonoBehaviour, IGolpeable
 {
     [SerializeField] private int vidaMaxima;
     [SerializeField] private int vidaActual;
