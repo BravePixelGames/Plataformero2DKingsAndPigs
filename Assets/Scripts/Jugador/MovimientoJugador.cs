@@ -6,14 +6,17 @@ public class MovimientoJugador : MonoBehaviour
     private const string STRING_VELOCIDAD_HORIZONTAL = "VelocidadHorizontal";
     private const string STRING_VELOCIDAD_VERTICAL = "VelocidadVertical";
     private const string STRING_EN_SUELO = "EnSuelo";
+    private const string STRING_ATERRIZAR = "Aterrizar";
 
     [Header("Referencias")]
     [SerializeField] private Rigidbody2D rb2D;
     [SerializeField] private Animator animator;
+    [SerializeField] private Collider2D colisionadorJugador;
 
     [Header("Movimiento Horizontal")]
     [SerializeField] private float velocidadMovimiento;
     private float entradaHorizontal;
+    private float entradaVertical;
 
     [Header("Salto")]
     [SerializeField] private float fuerzaSalto;
@@ -27,13 +30,12 @@ public class MovimientoJugador : MonoBehaviour
     private void Update()
     {
         entradaHorizontal = Input.GetAxisRaw("Horizontal");
+        entradaVertical = Input.GetAxisRaw("Vertical");
 
         if (Input.GetButtonDown("Jump"))
         {
             entradaSalto = true;
         }
-
-        enSuelo = Physics2D.OverlapBox(controladorSuelo.position, dimensionesCaja, 0f, capasSalto);
 
         ControlarAnimaciones();
     }
@@ -47,15 +49,50 @@ public class MovimientoJugador : MonoBehaviour
 
     private void ControlarSalto()
     {
+        bool estabaEnElSuelo = enSuelo;
+        enSuelo = false;
+
+        Collider2D suelo = Physics2D.OverlapBox(controladorSuelo.position, dimensionesCaja, 0f, capasSalto);
+
+        if (suelo)
+        {
+            enSuelo = true;
+            if (!estabaEnElSuelo && rb2D.linearVelocity.y <= 0)
+            {
+                animator.SetTrigger(STRING_ATERRIZAR);
+            }
+        }
+
         if (!entradaSalto) { return; }
         if (!enSuelo) { return; }
-        Saltar();
+
+        if (entradaVertical < 0)
+        {
+            DesactivarPlataformas();
+        }
+        else
+        {
+            Saltar();
+        }
     }
 
     private void Saltar()
     {
         entradaSalto = false;
         rb2D.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
+    }
+
+    private void DesactivarPlataformas()
+    {
+        Collider2D[] objetosTocados = Physics2D.OverlapBoxAll(controladorSuelo.position, dimensionesCaja, 0f, capasSalto);
+
+        foreach (Collider2D objeto in objetosTocados)
+        {
+            if (objeto.GetComponent<PlatformEffector2D>() != null)
+            {
+                Physics2D.IgnoreCollision(colisionadorJugador, objeto, true);
+            }
+        }
     }
 
     private void ControlarMovimientoHorizontal()
