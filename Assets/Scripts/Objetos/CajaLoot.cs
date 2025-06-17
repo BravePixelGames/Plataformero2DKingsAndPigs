@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class CajaLoot : MonoBehaviour, IGolpeable
@@ -6,6 +7,7 @@ public class CajaLoot : MonoBehaviour, IGolpeable
     [SerializeField] private Rigidbody2D[] partesCaja;
     [SerializeField] private GameObject[] lootDeCaja;
     [SerializeField] private Animator animator;
+    [SerializeField] private CinemachineImpulseSource cinemachineImpulseSource;
 
     [Header("Valores Caja")]
     [SerializeField] private int puntosDeVida;
@@ -32,6 +34,7 @@ public class CajaLoot : MonoBehaviour, IGolpeable
     {
         ActivarPartesCaja();
         GenerarLoot();
+        cinemachineImpulseSource.GenerateImpulse();
         Destroy(gameObject);
     }
 
