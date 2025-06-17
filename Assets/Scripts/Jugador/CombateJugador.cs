@@ -4,6 +4,7 @@ using UnityEngine;
 public class CombateJugador : MonoBehaviour
 {
     private const string STRING_ANIMACION_ATAQUE = "Atacar";
+    public static Action JugadorGolpeoUnObjetivo;
 
     [Header("Referencias")]
     [SerializeField] private Animator animator;
@@ -38,12 +39,20 @@ public class CombateJugador : MonoBehaviour
 
         Collider2D[] objetosTocados = Physics2D.OverlapCircleAll(controladorAtaque.position, radioAtaque);
 
+        bool objetivoGolpeado = false;
+
         foreach (Collider2D objeto in objetosTocados)
         {
             if (objeto.TryGetComponent(out IGolpeable golpeable))
             {
                 golpeable.TomarDaño(dañoAtaque);
+                objetivoGolpeado = true;
             }
+        }
+
+        if (objetivoGolpeado)
+        {
+            JugadorGolpeoUnObjetivo?.Invoke();
         }
     }
 
