@@ -1,26 +1,47 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CombateJugador : MonoBehaviour
 {
-    private const string STRING_ANIMACION_ATAQUE = "Atacar";
+    private const string STRING_ANIMACION_ATAQUE = "Ataque";
     public static Action JugadorGolpeoUnObjetivo;
 
     [Header("Referencias")]
     [SerializeField] private Animator animator;
+    [SerializeField] private Ataque[] ataquesJugador;
 
     [Header("Ataque")]
-    [SerializeField] private Transform controladorAtaque;
-    [SerializeField] private float radioAtaque;
-    [SerializeField] private int dañoAtaque;
     [SerializeField] private float tiempoEntreAtaques;
     [SerializeField] private float tiempoUltimoAtaque;
+
+    [Header("Combo")]
+    [SerializeField] private float ventanaDeCombo;
+    [SerializeField] private int indiceCombo = 0;
+    [SerializeField] private float tiempoEntreCombos;
+    [SerializeField] private float tiempoBufferEntrada = 0.25f;
+    private Queue<float> bufferEntradas = new();
 
     private void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            bufferEntradas.Enqueue(Time.time);
+        }
+
+        while (bufferEntradas.Count > 0 && Time.time > bufferEntradas.Peek() + tiempoBufferEntrada)
+        {
+            bufferEntradas.Dequeue();
+        }
+
+        if (bufferEntradas.Count > 0)
+        {
             IntentarAtacar();
+        }
+
+        if (indiceCombo > 0 && Time.time > tiempoUltimoAtaque + ventanaDeCombo)
+        {
+            ResetearCombo();
         }
     }
 
@@ -28,16 +49,22 @@ public class CombateJugador : MonoBehaviour
     {
         if (Time.time < tiempoUltimoAtaque + tiempoEntreAtaques) { return; }
 
-        Atacar();
+        if (bufferEntradas.Count > 0)
+        {
+            bufferEntradas.Dequeue();
+            Atacar();
+        }
     }
 
     private void Atacar()
     {
-        animator.SetTrigger(STRING_ANIMACION_ATAQUE);
+        Ataque ataqueActual = ataquesJugador[indiceCombo];
+
+        animator.SetTrigger(ataqueActual.stringAnimacion);
 
         tiempoUltimoAtaque = Time.time;
 
-        Collider2D[] objetosTocados = Physics2D.OverlapCircleAll(controladorAtaque.position, radioAtaque);
+        Collider2D[] objetosTocados = ObtenerObjetosTocados(ataqueActual);
 
         bool objetivoGolpeado = false;
 
@@ -45,7 +72,7 @@ public class CombateJugador : MonoBehaviour
         {
             if (objeto.TryGetComponent(out IGolpeable golpeable))
             {
-                golpeable.TomarDaño(dañoAtaque);
+                golpeable.TomarDaño(ataqueActual.cantidadDeDaño);
                 objetivoGolpeado = true;
             }
         }
@@ -54,11 +81,58 @@ public class CombateJugador : MonoBehaviour
         {
             JugadorGolpeoUnObjetivo?.Invoke();
         }
+
+        indiceCombo++;
+
+        if (indiceCombo >= ataquesJugador.Length)
+        {
+            tiempoUltimoAtaque += tiempoEntreCombos;
+            ResetearCombo();
+        }
+    }
+
+    private static Collider2D[] ObtenerObjetosTocados(Ataque ataqueActual)
+    {
+        Collider2D[] objetosTocados = ataqueActual.tipoDeAtaque switch
+        {
+            TipoDeAtaque.Caja => Physics2D.OverlapBoxAll(
+                                ataqueActual.controladorAtaque.position,
+                                ataqueActual.dimensionesCaja,
+                                0f
+                                ),
+            TipoDeAtaque.Circulo => Physics2D.OverlapCircleAll(
+                                ataqueActual.controladorAtaque.position,
+                                ataqueActual.radioAtaque
+                                ),
+            _ => Physics2D.OverlapCircleAll(
+                                ataqueActual.controladorAtaque.position,
+                                ataqueActual.radioAtaque
+                                ),
+        };
+
+        return objetosTocados;
+    }
+
+    private void ResetearCombo()
+    {
+        indiceCombo = 0;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(controladorAtaque.position, radioAtaque);
+
+        foreach (Ataque ataque in ataquesJugador)
+        {
+            switch (ataque.tipoDeAtaque)
+            {
+                case TipoDeAtaque.Caja:
+                    Gizmos.DrawWireCube(ataque.controladorAtaque.position, ataque.dimensionesCaja);
+                    break;
+                case TipoDeAtaque.Circulo:
+                    Gizmos.DrawWireSphere(ataque.controladorAtaque.position, ataque.radioAtaque);
+                    break;
+            }
+        }
     }
 }

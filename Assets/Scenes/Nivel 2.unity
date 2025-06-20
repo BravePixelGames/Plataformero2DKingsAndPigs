@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 57664547}
   - component: {fileID: 57664548}
   - component: {fileID: 57664549}
-  - component: {fileID: 57664550}
   m_Layer: 3
   m_Name: Jugador
   m_TagString: Player
@@ -158,6 +157,8 @@ Transform:
   - {fileID: 1046220515}
   - {fileID: 621025122}
   - {fileID: 1034676573}
+  - {fileID: 670619691}
+  - {fileID: 996759753}
   - {fileID: 1164133627}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -270,11 +271,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 332910561}
-  controladorAtaque: {fileID: 1034676573}
-  radioAtaque: 0.9
-  "da\xF1oAtaque": 1
-  tiempoEntreAtaques: 0.5
-  tiempoUltimoAtaque: -0.5
+  ataquesJugador:
+  - tipoDeAtaque: 0
+    nombreAtaque: Ataque Arriba
+    "cantidadDeDa\xF1o": 1
+    controladorAtaque: {fileID: 1034676573}
+    stringAnimacion: Ataque1
+    radioAtaque: 0.9
+    dimensionesCaja: {x: 0, y: 0}
+  - tipoDeAtaque: 1
+    nombreAtaque: Ataque Enfrente
+    "cantidadDeDa\xF1o": 1
+    controladorAtaque: {fileID: 670619691}
+    stringAnimacion: Ataque2
+    radioAtaque: 0
+    dimensionesCaja: {x: 1.66, y: 0.7}
+  - tipoDeAtaque: 0
+    nombreAtaque: Ataque Abajo
+    "cantidadDeDa\xF1o": 2
+    controladorAtaque: {fileID: 996759753}
+    stringAnimacion: Ataque3
+    radioAtaque: 0.8
+    dimensionesCaja: {x: 0, y: 0}
+  tiempoEntreAtaques: 0.35
+  tiempoUltimoAtaque: -0.35
+  ventanaDeCombo: 1
+  indiceCombo: 0
+  tiempoEntreCombos: 0.5
+  tiempoBufferEntrada: 0.25
 --- !u!114 &57664548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,59 +330,6 @@ MonoBehaviour:
   capasInteractuables:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &57664550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 57664541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ImpulseDefinition:
-    ImpulseChannel: 1
-    ImpulseShape: 2
-    CustomImpulseShape:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    ImpulseDuration: 0.1
-    ImpulseType: 0
-    DissipationRate: 0.25
-    RawSignal: {fileID: 0}
-    AmplitudeGain: 1
-    FrequencyGain: 1
-    RepeatMode: 0
-    Randomize: 1
-    TimeEnvelope:
-      AttackShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      DecayShape:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      AttackTime: 0
-      SustainTime: 0.2
-      DecayTime: 0.7
-      ScaleWithImpact: 1
-      HoldForever: 0
-    ImpactRadius: 100
-    DirectionMode: 0
-    DissipationMode: 2
-    DissipationDistance: 100
-    PropagationSpeed: 343
-  DefaultVelocity: {x: 0, y: 0, z: 0}
 --- !u!1 &281756154
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +699,7 @@ SpriteRenderer:
   m_SortingLayerID: 652346047
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4236677631525818213, guid: 7d3eb53a73263b940a8a34d99070c3e3, type: 3}
+  m_Sprite: {fileID: -611208542150049148, guid: fc02ee5c1d9803a40bd617d6a22ead2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4259,7 +4230,7 @@ Transform:
   m_GameObject: {fileID: 605005918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.15, y: -3.716, z: 0}
+  m_LocalPosition: {x: 3.316, y: -3.722, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4288,7 +4259,7 @@ MonoBehaviour:
   - {fileID: 1245849479137087609, guid: b10bdda26ded78843bbc0b92e1c38eae, type: 3}
   animator: {fileID: 605005924}
   cinemachineImpulseSource: {fileID: 605005925}
-  puntosDeVida: 3
+  puntosDeVida: 4
   fuerzaDestruir: 15
   torqueAlDestruir: 0.25
   fuerzaLootRango: {x: 4, y: 7}
@@ -4479,6 +4450,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.475, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 57664543}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &670619690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670619691}
+  m_Layer: 3
+  m_Name: ControladorAtaque2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &670619691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670619690}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.61, y: -0.284, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8487,6 +8489,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &996759752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 996759753}
+  m_Layer: 3
+  m_Name: ControladorAtaque3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &996759753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996759752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.646, y: -0.061, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 57664543}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1016421388
 GameObject:
   m_ObjectHideFlags: 0
@@ -8659,7 +8692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034676573}
   m_Layer: 3
-  m_Name: ControladorAtaque
+  m_Name: ControladorAtaque1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9510,7 +9543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1519255153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9621,7 +9654,7 @@ Transform:
   m_GameObject: {fileID: 1519255152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.447, y: -2.72, z: 0}
+  m_LocalPosition: {x: 2.04, y: -2.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10112,6 +10145,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 283138206}
   - {fileID: 1862773383}
+  - {fileID: 852185021}
   - {fileID: 1290672158}
   - {fileID: 57664543}
   - {fileID: 1675826604}
@@ -10119,4 +10153,3 @@ SceneRoots:
   - {fileID: 605005922}
   - {fileID: 1068827605}
   - {fileID: 1519255155}
-  - {fileID: 852185021}
