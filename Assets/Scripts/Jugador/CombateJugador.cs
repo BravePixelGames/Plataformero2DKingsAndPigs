@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CombateJugador : MonoBehaviour
 {
-    private const string STRING_ANIMACION_ATAQUE = "Ataque";
     public static Action JugadorGolpeoUnObjetivo;
 
     [Header("Referencias")]
@@ -72,7 +71,7 @@ public class CombateJugador : MonoBehaviour
         {
             if (objeto.TryGetComponent(out IGolpeable golpeable))
             {
-                golpeable.TomarDaño(ataqueActual.cantidadDeDaño);
+                golpeable.TomarDaño(ataqueActual.cantidadDeDaño, transform);
                 objetivoGolpeado = true;
             }
         }

@@ -19,7 +19,7 @@ public class CajaLoot : MonoBehaviour, IGolpeable
     [SerializeField] private float offsetYLoot;
     [SerializeField] private Vector2 offsetPosicionXLoot;
 
-    public void TomarDaño(int cantidadDaño)
+    public void TomarDaño(int cantidadDaño, Transform sender)
     {
         puntosDeVida -= cantidadDaño;
         animator.SetTrigger("Golpe");
