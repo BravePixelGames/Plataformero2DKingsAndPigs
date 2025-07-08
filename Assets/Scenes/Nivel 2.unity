@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 57664541}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: -3.526, z: 0}
+  m_LocalPosition: {x: 4.64, y: -2.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -699,7 +699,7 @@ SpriteRenderer:
   m_SortingLayerID: 652346047
   m_SortingLayer: -2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -611208542150049148, guid: fc02ee5c1d9803a40bd617d6a22ead2d, type: 3}
+  m_Sprite: {fileID: 4236677631525818213, guid: 7d3eb53a73263b940a8a34d99070c3e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4092,7 +4092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &605005919
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8799,7 +8799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1068827603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8882,7 +8882,7 @@ Transform:
   m_GameObject: {fileID: 1068827602}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.474, y: -3.599, z: 0.20100774}
+  m_LocalPosition: {x: 10.96, y: -2.6, z: 0.20100774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8925,6 +8925,7 @@ MonoBehaviour:
   dimensionesCaja: {x: 0.36, y: 0.05}
   controladorEstaEnSuelo: {fileID: 1263972049}
   estaEnElSuelo: 0
+  tiempoParaDesocupar: 0
 --- !u!114 &1068827607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8937,8 +8938,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf56a0174fefbf4c8db61460c73a874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2D: {fileID: 1068827604}
+  animator: {fileID: 1739639503}
+  movimientoEnemigo: {fileID: 1068827606}
   vidaMaxima: 10
   vidaActual: 0
+  fuerzaRetroceso: {x: 0.5, y: 2}
+  tiempoMinimoRetroceso: 0.25
 --- !u!1 &1087352444
 GameObject:
   m_ObjectHideFlags: 0
@@ -9543,7 +9549,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1519255153
 BoxCollider2D:
   m_ObjectHideFlags: 0
