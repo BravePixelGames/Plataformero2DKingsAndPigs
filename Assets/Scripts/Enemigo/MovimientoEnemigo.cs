@@ -23,7 +23,7 @@ public class MovimientoEnemigo : MonoBehaviour
     [SerializeField] private bool tocandoSuelo;
 
     [Header("Esperar")]
-    [SerializeField] private float tiempoAEsperar;
+    [SerializeField] private float tiempoAEsperarPorDefecto;
     private float tiempoAEsperarActual;
 
     [Header("Saltar")]
@@ -75,7 +75,7 @@ public class MovimientoEnemigo : MonoBehaviour
             if (tocandoSueloFrenteArriba)
             {
                 Girar();
-                CambiarAEstadoEsperar();
+                CambiarAEstadoEsperar(tiempoAEsperarPorDefecto);
             }
             else
             {
@@ -96,7 +96,7 @@ public class MovimientoEnemigo : MonoBehaviour
             else
             {
                 Girar();
-                CambiarAEstadoEsperar();
+                CambiarAEstadoEsperar(tiempoAEsperarPorDefecto);
             }
         }
     }
@@ -128,11 +128,11 @@ public class MovimientoEnemigo : MonoBehaviour
         if (estaEnElSuelo && Time.time > tiempoParaDesocupar)
         {
             animator.SetBool("Ocupado", false);
-            CambiarAEstadoEsperar();
+            CambiarAEstadoEsperar(tiempoAEsperarPorDefecto);
         }
     }
 
-    private void CambiarAEstadoEsperar()
+    public void CambiarAEstadoEsperar(float tiempoAEsperar)
     {
         velocidadDeMovimientoActual = 0;
         rb2D.linearVelocity = new Vector2(0, rb2D.linearVelocity.y);
@@ -203,4 +203,7 @@ public class MovimientoEnemigo : MonoBehaviour
         Gizmos.DrawLine(controladorSuelo.position, controladorSuelo.position + distanciaRayoSuelo * transform.up * -1);
         Gizmos.DrawWireCube(controladorEstaEnSuelo.position, dimensionesCaja);
     }
+
+    public EstadosEnemigo GetEstadoActual() => estadoActual;
+    public bool EstaEnElSuelo() => estaEnElSuelo;
 }

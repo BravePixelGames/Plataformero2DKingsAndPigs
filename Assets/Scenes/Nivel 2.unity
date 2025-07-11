@@ -8882,7 +8882,7 @@ Transform:
   m_GameObject: {fileID: 1068827602}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.96, y: -2.6, z: 0.20100774}
+  m_LocalPosition: {x: 10.96, y: -2.661, z: 0.20100774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8891,6 +8891,7 @@ Transform:
   - {fileID: 592485195}
   - {fileID: 454357307}
   - {fileID: 1263972049}
+  - {fileID: 2093711649}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1068827606
@@ -8920,7 +8921,7 @@ MonoBehaviour:
   controladorSuelo: {fileID: 454357307}
   distanciaRayoSuelo: 0.25
   tocandoSuelo: 1
-  tiempoAEsperar: 3
+  tiempoAEsperarPorDefecto: 3
   fuerzaSalto: 5
   dimensionesCaja: {x: 0.36, y: 0.05}
   controladorEstaEnSuelo: {fileID: 1263972049}
@@ -9961,6 +9962,7 @@ GameObject:
   - component: {fileID: 1739639501}
   - component: {fileID: 1739639502}
   - component: {fileID: 1739639503}
+  - component: {fileID: 1739639504}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -10060,6 +10062,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1739639504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739639500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7f48a4a9c7c394e8885fd2cbf283ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2D: {fileID: 1068827604}
+  animator: {fileID: 1739639503}
+  controladorAtaque: {fileID: 2093711649}
+  capasGolpeables:
+    serializedVersion: 2
+    m_Bits: 8
+  movimientoEnemigo: {fileID: 1068827606}
+  radioCirculo: 0.35
+  "da\xF1oAtaque": 1
+  tiempoEntreAtaques: 1
+  tiempoUltimoAtaque: -1
+  duracionDelAtaque: 0.6
+  tiempoAEsperarDespuesDelAtaque: 0.75
 --- !u!1 &1862773381
 GameObject:
   m_ObjectHideFlags: 0
@@ -10143,6 +10170,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2093711648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093711649}
+  m_Layer: 7
+  m_Name: ControladorAtaque
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2093711649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093711648}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.254, y: 0.214, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068827605}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10157,5 +10215,5 @@ SceneRoots:
   - {fileID: 1675826604}
   - {fileID: 1087352447}
   - {fileID: 605005922}
-  - {fileID: 1068827605}
   - {fileID: 1519255155}
+  - {fileID: 1068827605}
